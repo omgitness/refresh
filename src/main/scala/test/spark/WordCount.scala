@@ -1,4 +1,4 @@
-package test
+package test.spark
 
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -7,7 +7,7 @@ object WordCount {
     val sparkConf = new SparkConf
     sparkConf.setAppName("WordCount").setMaster("local[*]")
     val sc = new SparkContext(sparkConf)
-    
+
     //val input = List("the","big","bad","wolf","jumped","over","the","lazy","fox")
     //val rdd = sc.parallelize(input)
 

@@ -9,12 +9,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.scalaj</groupId>
-			<artifactId>scalaj-http_2.10</artifactId>
-			<version>2.2.1</version>
-		</dependency>
-		<!-- scala -->
-		<dependency>
 			<groupId>org.scala-lang</groupId>
 			<artifactId>scala-library</artifactId>
 			<version>${scala.version}</version>
@@ -31,39 +25,6 @@
 					<artifactId>*</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-
-		<!-- hbase client -->
-		<dependency>
-			<groupId>org.apache.hbase</groupId>
-			<artifactId>hbase-client</artifactId>
-			<version>${hbase.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.apache.hadoop</groupId>
-					<artifactId>hadoop-auth</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- hbase server -->
-		<dependency>
-			<groupId>org.apache.hbase</groupId>
-			<artifactId>hbase-server</artifactId>
-			<version>${hbase.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>servlet-api-2.5</artifactId>
-					<groupId>org.mortbay.jetty</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- google -->
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
 		</dependency>
 
 		<!-- spark -->
@@ -83,114 +44,6 @@
 			<artifactId>spark-sql_2.10</artifactId>
 			<version>${spark.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-catalyst_2.10</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-streaming_2.10</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-streaming-kafka_2.10</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-mllib_2.10</artifactId>
-			<version>${spark.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.spark</groupId>
-			<artifactId>spark-hive_2.10</artifactId>
-			<version>${spark.version}</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>avro-mapred</artifactId>
-					<groupId>org.apache.avro</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- parquet -->
-		<dependency>
-			<groupId>com.twitter</groupId>
-			<artifactId>parquet-common</artifactId>
-			<version>${parquet.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.twitter</groupId>
-			<artifactId>parquet-encoding</artifactId>
-			<version>${parquet.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.twitter</groupId>
-			<artifactId>parquet-column</artifactId>
-			<version>${parquet.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.twitter</groupId>
-			<artifactId>parquet-hadoop</artifactId>
-			<version>${parquet.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.twitter</groupId>
-			<artifactId>parquet-avro</artifactId>
-			<version>${parquet.version}</version>
-		</dependency>
-
-		<!-- avro -->
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro</artifactId>
-			<version>${avro.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro-mapred</artifactId>
-			<version>${avro.version}</version>
-			<classifier>hadoop2</classifier>
-			<exclusions>
-				<exclusion>
-					<artifactId>servlet-api</artifactId>
-					<groupId>org.mortbay.jetty</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro-tools</artifactId>
-			<version>${avro.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.avro</groupId>
-			<artifactId>avro-compiler</artifactId>
-			<version>${avro.version}</version>
-		</dependency>
-
-		<!-- kafka -->
-		<dependency>
-			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka_2.10</artifactId>
-			<version>${kafka.version}</version>
-		</dependency>
-
-		<!-- joda time -->
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>${jodatime.version}</version>
-		</dependency>
-		<!-- to get rid of "assertion failed: org.joda.convert.FromString" during
-			compilation -->
-		<dependency>
-			<groupId>org.joda</groupId>
-			<artifactId>joda-convert</artifactId>
-			<version>1.8</version>
-		</dependency>
 
 		<!-- unit test -->
 		<dependency>
@@ -199,61 +52,11 @@
 			<version>${scalatest.version}</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- postgres -->
-		<dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<version>${postgres.version}</version>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- finagle -->
-		<dependency>
-			<groupId>com.twitter</groupId>
-			<artifactId>finagle-http_2.10</artifactId>
-			<version>6.31.0</version>
-		</dependency>
-
-		<!-- apache zookeeper -->
-		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>${zookeeper.version}</version>
-			<exclusions>
-			<exclusion>
-				<artifactId>netty</artifactId>
-				<groupId>io.netty</groupId>
-			</exclusion>
-			</exclusions>
-		</dependency>
-
-		<!-- apache curator - for service discovery stuffs -->
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-recipes</artifactId>
-			<version>${curator.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-client</artifactId>
-			<version>${curator.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.apache.curator</groupId>
-			<artifactId>curator-x-discovery</artifactId>
-			<version>${curator.version}</version>
-		</dependency>
-
-
 	</dependencies>
 
 	<build>
 		<!-- <sourceDirectory>${project.basedir}/src/main/scala</sourceDirectory> -->
 		<plugins>
-			<!-- set to java 1.7 as default instead of 1.5 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -352,59 +155,12 @@
 				</executions>
 			</plugin>
 		</plugins>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings
-					only. It has no influence on the Maven build itself. -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.apache.avro
-										</groupId>
-										<artifactId>
-											avro-maven-plugin
-										</artifactId>
-										<versionRange>
-											[1.7.7,)
-										</versionRange>
-										<goals>
-											<goal>schema</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<execute />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-
-			</plugins>
-		</pluginManagement>
 	</build>
 
 	<properties>
-		<avro.version>1.7.7</avro.version>
-		<curator.version>2.9.0</curator.version>
-		<fasterxml.jackson.version>2.3.0</fasterxml.jackson.version>
-		<guava.version>15.0</guava.version>
 		<hadoop.version>2.7.1</hadoop.version>
- 		<hbase.version>1.1.2</hbase.version>
-		<jodatime.version>2.9.1</jodatime.version>
-		<kafka.version>0.8.2.1</kafka.version>
-		<parquet.version>1.6.0</parquet.version>
-		<postgres.version>9.3-1100-jdbc41</postgres.version>
-		<scala.version>2.10.5</scala.version>
+ 		<scala.version>2.10.5</scala.version>
 		<scalatest.version>2.2.4</scalatest.version>
 		<spark.version>1.6.2</spark.version>
-		<zookeeper.version>3.4.6</zookeeper.version>
 	</properties>
 </project>

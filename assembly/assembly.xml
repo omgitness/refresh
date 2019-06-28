@@ -1,0 +1,46 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2
+  http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>uber</id>
+	<formats>
+		<format>jar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<fileSet>
+			<directory>${project.basedir}/target/classes</directory>
+			<outputDirectory></outputDirectory>
+		</fileSet>
+	</fileSets>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>/</outputDirectory>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+			<excludes>
+				<!-- <exclude>org.apache.spark:spark-*</exclude> -->
+			</excludes>
+			<includes>
+				<!-- <include>com.twitter:parquet-*</include>
+				<include>org.apache.avro:avro</include>
+				<include>org.apache.avro:avro-mapred</include>
+				<include>org.apache.avro:avro-compiler</include>
+				<include>com.google.guava:guava*</include>
+				<include>org.apache.kafka:kafka_2.10</include>
+				<include>org.apache.kafka:kafka-clients</include>
+				<include>net.sf.jopt-simple:jopt-simple</include>
+				<include>com.101tec:zkclient</include>
+				<include>org.apache.hbase:hbase*</include>
+				<include>org.apache.spark:spark-streaming-kafka_2.10</include> -->
+				<!--<include>org.apache.phoenix:phoenix*</include>-->
+				<!--<include>org.apache.spark:spark-streaming*</include>-->
+				<!--<include>org.cloudera.htrace:htrace-core</include>-->
+				<!-- <include>joda-time:joda-time</include>
+				<include>org.joda:joda-convert</include>
+				<include>com.yammer.metrics:metrics-core</include> -->
+			</includes>
+		</dependencySet>
+	</dependencySets>
+</assembly>
