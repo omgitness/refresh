@@ -98,9 +98,13 @@
 				<configuration>
 					<recompileMode>incremental</recompileMode>
 					<args>
-            <!--<arg>-deprecation</arg>
-            <arg>-feature</arg>-->
-          </args>
+						<!--<arg>-deprecation</arg>
+						<arg>-feature</arg>-->
+					</args>
+					<jvmArgs>
+						<jvmArg>-Xms256m</jvmArg>
+						<jvmArg>-Xmx1024m</jvmArg>
+					</jvmArgs>
 				</configuration>
 			</plugin>
 
